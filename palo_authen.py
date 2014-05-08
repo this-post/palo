@@ -87,5 +87,5 @@ if __name__ == '__main__':
     print '\  \  /          \          \  / \        \  /     \  \  /'
     print ' \__\/            \__________\/   \________\/       \__\/'
     print ' '
-    print color.HEADER + 'Mindterra Palo Alto Authenticator\r\n'
+    print color.HEADER + 'Palo Alto Authenticator\r\n'
     check()
