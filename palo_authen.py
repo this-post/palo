@@ -29,7 +29,7 @@ def check():
             exit()
         elif res == 'Moved Temporarily':
             while 1:
-                yes_no = raw_input(color.OKGREEN + '[+] You are not login, Are you attempt to login now?(Y/N): ')
+                yes_no = raw_input(color.OKGREEN + '[+] You not login yet, Are you attempt to login now?(Y/N): ')
                 if yes_no == 'Y' or yes_no == 'y':
                     attempt = 1
                     while 1:
@@ -87,5 +87,5 @@ if __name__ == '__main__':
     print '\  \  /          \          \  / \        \  /     \  \  /'
     print ' \__\/            \__________\/   \________\/       \__\/'
     print ' '
-    print color.HEADER + 'Palo Alto Authenticator\r\n'
+    print color.HEADER + 'Palo Alto Captive Portal Authenticator\r\n'
     check()
