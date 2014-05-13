@@ -5,6 +5,7 @@ import urllib
 import getpass
 import socket
 import os
+import sys
 
 #http://stackoverflow.com/questions/287871/print-in-terminal-with-colors-using-python
 class color:
@@ -62,7 +63,7 @@ def user_val():
 def login(user,passwd):
     params = urllib.urlencode({'inputStr': '', 'escapeUser': user, 'user': user, 'passwd': passwd, 'ok': 'Login'})
     headers = {'User-Agent': 'Post Very Handsome', 'Content-type': 'application/x-www-form-urlencoded', 'Accept': 'text/plain'}
-    check_login = httplib.HTTPSConnection('192.168.5.254:6082')
+    check_login = httplib.HTTPSConnection(sys.argv[1] + ':6082')
     check_login.request('POST', '/php/uid.php?vsys=1', params, headers)
     response = check_login.getresponse()
     global login_res
@@ -88,4 +89,7 @@ if __name__ == '__main__':
     print ' \__\/            \__________\/   \________\/       \__\/'
     print ' '
     print color.HEADER + 'Palo Alto Captive Portal Authenticator\r\n'
+    if len(sys.argv) != 2:
+        print color.WARNING + '[!] Usage: ' + sys.argv[0] + ' ' + '[GW(Palo) IP]'
+        exit()
     check()
