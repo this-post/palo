@@ -1,11 +1,6 @@
 __author__ = 'keerati'
 
-import httplib
-import urllib
-import getpass
-import socket
-import os
-import sys
+import httplib, urllib, getpass, os, sys
 
 #http://stackoverflow.com/questions/287871/print-in-terminal-with-colors-using-python
 class color:
@@ -30,8 +25,8 @@ def check():
             exit()
         elif res == 'Moved Temporarily':
             while 1:
-                yes_no = raw_input(color.OKGREEN + '[+] You not login yet, Are you attempt to login now?(Y/N): ')
-                if yes_no == 'Y' or yes_no == 'y':
+                is_attempt = raw_input(color.OKGREEN + '[+] You not login yet, Are you attempt to login now?(Y/N): ')
+                if is_attempt == 'Y' or is_attempt == 'y':
                     attempt = 1
                     while 1:
                         user_val()
@@ -46,10 +41,10 @@ def check():
                             print color.OKGREEN + '[+] Success, Happy surfing'
                             break
                     break
-                elif yes_no == 'N' or yes_no == 'n':
+                elif is_attempt == 'N' or is_attempt == 'n':
                     print color.OKGREEN + '[+] User exit'
                     exit()
-    except socket.error:
+    except:
         print color.FAIL + '[-] Unable to check'
 
 
