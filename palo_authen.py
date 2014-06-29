@@ -85,6 +85,6 @@ if __name__ == '__main__':
     print ' '
     print color.HEADER + 'Palo Alto Captive Portal Authenticator\n'
     if len(sys.argv) != 2:
-        print color.WARNING + '[!] Usage: ' + sys.argv[0] + ' ' + '[GatewayW(PAN IP)]'
+        print color.WARNING + '[!] Usage: ' + sys.argv[0] + ' ' + '[Gateway(PAN IP)]'
         exit()
     check()
