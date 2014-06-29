@@ -35,14 +35,14 @@ def check():
                             if attempt == 3:
                                 print color.FAIL + '[-] You are trying exceed limit'
                                 exit()
-                            print color.FAIL + '[-] Fail, Please try again(attempt=' + str(attempt) + ')'
+                            print color.FAIL + '[-] Fail, Please try again'
                             attempt += 1
                         elif login_res == 302:
                             print color.OKGREEN + '[+] Success, Happy surfing'
                             break
                     break
                 elif is_attempt == 'N' or is_attempt == 'n':
-                    print color.OKGREEN + '[+] User exit'
+                    print color.OKGREEN + '[+] User aborted'
                     exit()
     except:
         print color.FAIL + '[-] Unable to check'
@@ -83,8 +83,8 @@ if __name__ == '__main__':
     print '\  \  /          \          \  / \        \  /     \  \  /'
     print ' \__\/            \__________\/   \________\/       \__\/'
     print ' '
-    print color.HEADER + 'Palo Alto Captive Portal Authenticator\r\n'
+    print color.HEADER + 'Palo Alto Captive Portal Authenticator\n'
     if len(sys.argv) != 2:
-        print color.WARNING + '[!] Usage: ' + sys.argv[0] + ' ' + '[GW(Palo) IP]'
+        print color.WARNING + '[!] Usage: ' + sys.argv[0] + ' ' + '[GatewayW(PAN IP)]'
         exit()
     check()
